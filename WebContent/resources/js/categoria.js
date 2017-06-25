@@ -42,14 +42,25 @@ $(".editCategoria").on("click",function(e){
 	var des = $(e.target).attr("desc");
 	var correl = $(e.target).attr("correl");
 	
-	$("#modificar_categoria").modal('open');
+	$.post("checkBlockCategoria",{"cod" : cod},function(data){
+		if(!data){
+			$("#modificar_categoria").modal('open');
+			$("#codigo_edit").val(cod);
+			$("#descripcion_edit").val(des);
+			
+			$("#modCategoria").attr("cod",cod);
+			Materialize.updateTextFields();
+		}
+		else{
+			showMsg("El usuario x está bloqueando el producto");
+		}
+	});
 	
-	$("#codigo_edit").val(cod);
-	$("#descripcion_edit").val(des);
 	
-	$("#modCategoria").attr("cod",cod);
 	
-	Materialize.updateTextFields();
+	
+	
+	
 	
 	
 	
