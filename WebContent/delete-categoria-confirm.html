@@ -1,0 +1,58 @@
+<div class="modal " id="deleteCategoriaConfirm" >
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        
+        <h4 class="modal-title" id="myModalLabel">Eliminar Categoria</h4>
+      </div>
+      <div class="modal-body">
+        Esta seguro que eliminar la categoria <span id="categoria-desc"></span>?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" id="delete">Borrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="confirm" tabindex="-1" role="dialog" aria-labelledby="confirm">
+       <div class="modal-dialog" role="document">
+           <div class="modal-content">
+               <div class="modal-body modalBodyMsg">
+                   <h4 id="msgModalConfirm"></h4>
+                   <div class="divModalButton">
+                       <button type="button" data-dismiss="modal" class="btn btn-primary" id="confirmDel">Delete</button>
+                       <button type="button" data-dismiss="modal" class="btn btn-primary modal-close ">Cancel</button>
+                   </div>
+
+               </div>
+           </div>
+       </div>
+</div>
+
+<div class="modal fade" id="modificar_categoria" tabindex="-1" role="dialog" aria-labelledby="confirm">
+       <div class="modal-dialog" role="document">
+           <div class="modal-content">
+               <div class="modal-body modalBodyMsg">
+               <h4>Editar Categoria</h4>
+                   <form id="modCategoriaForm" action="#" method="post">
+                   		<div class="input-field col s12">
+				            <input readonly="readonly"  name="codigo_edit" id="codigo_edit" type="number" data-length="2" maxlength="2">
+				            <label for="codigo_edit" class="center-align" >Codigo</label>
+				         </div>
+			        	<div class="input-field col s12">
+				            <input name="descripcion_edit" id="descripcion_edit" type="text">
+				            <label for="descripcion_edit" class="center-align">Descripcion</label>
+				         </div>	     
+                   
+	                   <div class="divModalButton">
+	                       <button  type="submit" data-dismiss="modal" class="btn btn-primary" id="modCategoria">Modificar</button>
+	                       <button type="button" data-dismiss="modal" class="btn btn-primary modal-close ">Cancelar</button>
+	                   </div>
+                   </form>
+
+               </div>
+           </div>
+       </div>
+</div>

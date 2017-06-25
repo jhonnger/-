@@ -1,0 +1,48 @@
+<jsp:useBean id="CategoriaDTO" class="modelo.CategoriaDTO" scope="page" />
+<div class="modal " id="modal" >
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        
+        <h4 class="modal-title" id="myModalLabel">Agregar Producto</h4>
+      </div>
+      <div class="modal-body">
+        <form id="addForm" action="#" method="post">
+        
+        	<div class="input-field col s12">
+			    <select id="selectCat">
+			      <option value="" disabled selected>Choose your option</option>
+			      <%	
+						    	for(Categoria categoria :CategoriaDTO.listar() ){
+									out.println("<option value='1'>"+categoria.getDescripcion()+"</option>");	
+								}
+				  %>
+			      
+			    </select>
+			    <label>Categoria</label>
+			 </div>
+        	<div class="input-field col s12">
+	            <input name="descripcion" id="descripcion" type="text">
+	            <label for="descripcion" class="center-align">Descripcion</label>
+	         </div>
+	         
+	         
+	         
+	         <div class="input-field col s12">
+	            <input name="cantidad" id="cantidad" type="text">
+	            <label for="cantidad" class="center-align">Cantidad</label>
+	         </div>
+		
+			<div class="input-field col s12">
+	            <input name="precio" id="precio" type="text">
+	            <label for="precio" class="center-align">Precio</label>
+	         </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" id="agregar">Agregar</button>
+      </div>
+    </div>
+  </div>
+</div>

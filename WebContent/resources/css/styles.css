@@ -1,0 +1,29 @@
+html {
+    display: table;
+    margin: auto;
+}
+html, body {
+    height: 100%;
+}
+.modal-body{
+	padding : 30px !important;
+}
+body {
+    display: table-cell;
+    vertical-align: middle;
+}
+.medium-small {
+    font-size: 0.9rem;
+    margin: 0;
+    padding: 0;
+}
+.margin {
+    margin: 0 !important;
+}
+input[type="submit"] {
+	height : 100%;
+	width : 100%;
+}
+#second{
+	display: none;
+}
