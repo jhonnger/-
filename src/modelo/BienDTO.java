@@ -64,12 +64,38 @@ public class BienDTO {
 				+ "(?,?,?,?)";
 		
 		// execute insert SQL stetement
+		System.out.print("hola :");
 		try {
 			PreparedStatement preparedStatement = conexion.conectar().prepareStatement(insertTableSQL);
 			preparedStatement.setInt(1, 11);
 			preparedStatement.setString(2,descripcion );
 			preparedStatement.setInt(3, unidades);
 			preparedStatement.setDouble(4, precio);
+			preparedStatement .executeUpdate();
+			return true;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return false;
+	}
+
+	public boolean insertar(String desc, String cantidad, String precio, String categoria) {
+		String insertTableSQL = "INSERT INTO bien"
+				+ "(idBien, descBien,unidades,precio,estbloqueo,userBloqueo) VALUES"
+				+ "(?,?,?,?,?,?)";
+		System.out.print("Aqui");
+		// execute insert SQL stetement
+		try {
+			double p=Double.parseDouble(precio);
+			PreparedStatement preparedStatement = conexion.conectar().prepareStatement(insertTableSQL);
+			preparedStatement.setInt(1, 0);
+			preparedStatement.setString(2,desc);
+			preparedStatement.setString(3,cantidad);
+			preparedStatement.setDouble(4,p);
+			preparedStatement.setInt(5,0);
+			preparedStatement.setString(6, "cumpita");
 			preparedStatement .executeUpdate();
 			return true;
 		} catch (Exception e) {

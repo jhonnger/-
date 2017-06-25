@@ -1,11 +1,15 @@
 $('.add-bien').click(function(e){
 	e.preventDefault();
-	$('#modal').modal();
+	$('#modal-bien').modal();
 });
 
-$("#agregar").click(function(e) {
-	$.post( "add-bien.jsp", $( "#addForm" ).serialize(), function( data ) {
-       
-       
-    }, "json");
+
+$("#addForm").on("submit",function(e){
+	e.preventDefault();
+	$.post("addBien",$("#addForm").serialize(),function(data){
+		if(data){
+			$("#modalBien").modal('close');
+			location.reload(true);
+		}
+	});
 });
