@@ -43,13 +43,8 @@ $(".editCategoria").on("click",function(e){
 	var correl = $(e.target).attr("correl");
 	
 	$.post("checkBlockCategoria",{"cod" : cod},function(data){
-		if(!data){
-			$("#modificar_categoria").modal('open');
-			$("#codigo_edit").val(cod);
-			$("#descripcion_edit").val(des);
+		if(data){
 			
-			$("#modCategoria").attr("cod",cod);
-			Materialize.updateTextFields();
 		}
 		else{
 			if(data.bloqueado){

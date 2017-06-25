@@ -26,7 +26,7 @@ public class BienDTO {
 		bienes =  new ArrayList<>();
 		try {
 			 statement = conexion.conectar().createStatement();
-			 resultSet = statement.executeQuery("SELECT * FROM bien");
+			 resultSet = statement.executeQuery("SELECT * FROM bien WHERE eliminado = 0");
 			 
 			 while(resultSet.next())  {
 					bien=new Bien(); 

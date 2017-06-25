@@ -41,7 +41,7 @@
 				out.println("<td>"+bien.getDescripcion()+"</td>");
 				out.println("<td>"+bien.getUnidades()+"</td>");
 				out.println("<td>"+bien.getPrecio()+"</td>");
-				out.println("<td>"+"<a desc='"+bien.getDescripcion()+"' class='deleteItem' href='eliminarBien?id="+bien.getId()+"'>Eliminar</a>"+"</td>");
+				out.println("<td>"+"<a desc='"+bien.getDescripcion()+"' class='deleteItemProd' href='eliminarBien?id="+bien.getId()+"'>Eliminar</a>"+"</td>");
 				out.println("<td>"+"<a href='#'>Modificar</a>"+"</td>");
 				out.println("</tr>");
 			}
@@ -54,5 +54,6 @@
 <script type="text/javascript" src="resources/js/materialize.min.js"></script>
 <script type="text/javascript" src="resources/js/app.js"></script>
 <script type="text/javascript" src="resources/js/producto.js"></script>
+<script type="text/javascript" src="resources/js/utils.js"></script>
 </body>
 </html>
