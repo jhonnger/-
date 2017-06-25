@@ -16,7 +16,7 @@
 <%@include file="navBar.jsp" %>
 <h1>Mantenimiento producto </h1>
 	
-	<a class="waves-effect waves-light btn"  href="#modal">Agregar Producto</a>
+	<a class="waves-effect waves-light btn"  href="#modalBien">Agregar Producto</a>
 	<br><br>
 	<div id="modalj" class="modal modal-fixed-footer">
 	    <div class="modal-content">

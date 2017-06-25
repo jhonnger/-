@@ -58,7 +58,7 @@ public boolean insertar(String codigo, String descripcion){
 		String insertTableSQL = "INSERT INTO categoria"
 				+ "(codCat, desccat) VALUES"
 				+ "(?,?)";
-		
+		System.out.print("desde insertar categoria");
 		// execute insert SQL stetement
 		try {
 			PreparedStatement preparedStatement = conexion.conectar().prepareStatement(insertTableSQL);
