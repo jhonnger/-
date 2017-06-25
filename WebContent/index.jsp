@@ -13,6 +13,7 @@
 <link href="resources/css/materialize.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+
 	
 	
 	<%@include file="navBar.jsp" %>
@@ -26,5 +27,6 @@
 <script type="text/javascript" src="resources/js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="resources/js/materialize.min.js"></script>
 <script type="text/javascript" src="resources/js/app.js"></script>
+
 </body>
 </html>
