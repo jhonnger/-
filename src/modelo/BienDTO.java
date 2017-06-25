@@ -105,4 +105,24 @@ public class BienDTO {
 		
 		return false;
 	}
+
+	public boolean eliminar(String cod) {
+		String insertTableSQL = "UPDATE bien "
+				+ "SET eliminado = ? "
+				+ "WHERE idBien like ? ";
+		
+		// execute insert SQL stetement
+		try {
+			PreparedStatement preparedStatement = conexion.conectar().prepareStatement(insertTableSQL);
+			preparedStatement.setString(1, "1");
+			preparedStatement.setString(2,cod );
+			preparedStatement .executeUpdate();
+			return true;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return false;
+	}
 }
