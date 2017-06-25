@@ -52,7 +52,11 @@ $(".editCategoria").on("click",function(e){
 			Materialize.updateTextFields();
 		}
 		else{
-			showMsg("El usuario x está bloqueando el producto");
+			if(data.bloqueado){
+				showMsg("El usuario " + data.user+" está bloqueando la categoria "+des);
+				
+			}
+			
 		}
 	});
 	

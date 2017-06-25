@@ -41,7 +41,7 @@ public class CheckBlockCategoria extends HttpServlet {
 		response.setContentType("application/json");
 		PrintWriter out = response.getWriter();
 		
-		out.print("{\"2\":2}");
+		out.print("{\"bloqueado\":true, \"user\": \"jhonny\"}");
 		out.flush();
 	}
 
