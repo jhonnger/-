@@ -41,7 +41,7 @@
 				out.println("<td>"+bien.getDescripcion()+"</td>");
 				out.println("<td>"+bien.getUnidades()+"</td>");
 				out.println("<td>"+bien.getPrecio()+"</td>");
-				out.println("<td>"+"<a href='#'>Eliminar</a>"+"</td>");
+				out.println("<td>"+"<a desc='"+bien.getDescripcion()+"' class='deleteItem' href='eliminarBien?id="+bien.getId()+"'>Eliminar</a>"+"</td>");
 				out.println("<td>"+"<a href='#'>Modificar</a>"+"</td>");
 				out.println("</tr>");
 			}
@@ -49,6 +49,7 @@
 </table>
 
 <%@include file="add-bien-modal.html" %>
+<%@include file="delete-bien-confirm.html" %>
 <script type="text/javascript" src="resources/js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="resources/js/materialize.min.js"></script>
 <script type="text/javascript" src="resources/js/app.js"></script>
