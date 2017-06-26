@@ -1,5 +1,6 @@
 package modelo;
 
+import java.sql.CallableStatement;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -113,8 +114,39 @@ public boolean insertar(String codigo, String descripcion){
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		finally{
+			conexion.desconectar();
+		}
 		
 		return false;
 	}
+	
+	public String bloquear(String codigo, String user){
+		 String simpleProc = "{ call paBloquearCategoria(?,?) }";
+		 String out = "";
+		 ResultSet rs;
+		 try {
+			CallableStatement cs = conexion.conectar().prepareCall(simpleProc);
+			cs.setString(1, codigo);
+			cs.setString(2, user);
+			//cs.registerOutParameter(3, java.sql.Types.VARCHAR);
+			
+			cs.execute();
+			rs = cs.getResultSet();
+			rs.next();
+			out = rs.getString(1);
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			conexion.desconectar();
+		}
+		 
+		 return out;
+	}
+	
 
 }

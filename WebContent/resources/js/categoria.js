@@ -41,28 +41,27 @@ $(".editCategoria").on("click",function(e){
 	var cod = $(e.target).attr("cod");
 	var des = $(e.target).attr("desc");
 	var correl = $(e.target).attr("correl");
-	
-	$.post("checkBlockCategoria",{"cod" : cod},function(data){
-		if(data){
+	var params = {"cod" : cod};
+	$.post("checkBlockCategoria",params, function(data){
+		
+		var params = data.split(/;/);
+		console.log(params[0]);
+		if(params[0]==0){
+			$("#modificar_categoria").modal('open');
+			$("#codigo_edit").val(cod);
+			$("#descripcion_edit").val(des);
 			
+			$("#modCategoria").attr("cod",cod);
+			Materialize.updateTextFields();
+		}
+		else if (params[0]==1){
+			showMsg(params[1]);
 		}
 		else{
-			if(data.bloqueado){
-				showMsg("El usuario " + data.user+" está bloqueando la categoria "+des);
-				
-			}
+			
 			
 		}
 	});
-	
-	
-	
-	
-	
-	
-	
-	
-	
 });
 
 $("#modCategoriaForm").on("submit",function(e) {
