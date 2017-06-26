@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import modelo.CategoriaDTO;
 import Entidades.Categoria;
 
 /**
@@ -38,11 +39,17 @@ public class CheckBlockCategoria extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.setContentType("application/json");
-		PrintWriter out = response.getWriter();
 		
-		out.print("{\"bloqueado\":true, \"user\": \"jhonny\"}");
-		out.flush();
+		PrintWriter out = response.getWriter();
+		CategoriaDTO categoriaDTO = new CategoriaDTO();
+		
+		String salida,cod = request.getParameter("cod");
+		String user;
+		user=  request.getSession().getAttribute("user")+"";
+		salida = categoriaDTO.bloquear(cod,user);
+		
+		out.print(salida);
+		
 	}
 
 }
