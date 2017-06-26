@@ -42,14 +42,24 @@ $(".editCategoria").on("click",function(e){
 	var des = $(e.target).attr("desc");
 	var correl = $(e.target).attr("correl");
 	
-	$("#modificar_categoria").modal('open');
+	$.post("checkBlockCategoria",{"cod" : cod},function(data){
+		if(data){
+			
+		}
+		else{
+			if(data.bloqueado){
+				showMsg("El usuario " + data.user+" está bloqueando la categoria "+des);
+				
+			}
+			
+		}
+	});
 	
-	$("#codigo_edit").val(cod);
-	$("#descripcion_edit").val(des);
 	
-	$("#modCategoria").attr("cod",cod);
 	
-	Materialize.updateTextFields();
+	
+	
+	
 	
 	
 	

@@ -11,3 +11,8 @@ function showDialogConfirm(msg,callable) {
             $('#confirm').modal('close');
         });
 }
+
+function showMsg(msj) {
+    $('#messageModal').modal('open');
+    $('#msgModal').html(msj);
+}

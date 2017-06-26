@@ -14,7 +14,7 @@ $("#addForm").on("submit",function(e){
 	});
 });
 
-$(".deleteItem").on("click",function(e){
+$(".deleteItemProd").on("click",function(e){
 	e.preventDefault();
 	/*$("#deleteCategoriaConfirm").modal('open');
 	$("#categoria-desc").html($(e.target).attr("dataExtra"));*/

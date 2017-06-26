@@ -26,7 +26,11 @@ public class BienDTO {
 		bienes =  new ArrayList<>();
 		try {
 			 statement = conexion.conectar().createStatement();
+<<<<<<< HEAD
 			 resultSet = statement.executeQuery("SELECT * FROM bien where eliminado = 0");
+=======
+			 resultSet = statement.executeQuery("SELECT * FROM bien WHERE eliminado = 0");
+>>>>>>> d52ccf487fc13f116df7ef17121bc445c05b9c0d
 			 
 			 while(resultSet.next())  {
 					bien=new Bien(); 
