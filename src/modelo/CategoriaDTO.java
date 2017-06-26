@@ -103,6 +103,7 @@ public boolean insertar(String codigo, String descripcion){
 		
 		// execute insert SQL stetement
 		try {
+			System.out.print("codigo :"+codigo+" des "+desc);
 			PreparedStatement preparedStatement = conexion.conectar().prepareStatement(insertTableSQL);
 			preparedStatement.setString(1, desc);
 			preparedStatement.setString(2,codigo );
