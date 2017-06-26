@@ -138,12 +138,12 @@ public boolean modificar(String codigo,String desc,String unidades,double precio
 		try {
 			System.out.print("aqui en modificar ");
 			PreparedStatement preparedStatement = conexion.conectar().prepareStatement(insertTableSQL);
-			preparedStatement.setString(1, codigo);
-			preparedStatement.setString(2,desc);
-			preparedStatement.setString(3,unidades);
-			preparedStatement.setDouble(4,precio);
-			preparedStatement.setInt(5,0);
-			preparedStatement.setString(6,"nadie" );
+			preparedStatement.setString(1, desc);
+			preparedStatement.setString(2,unidades);
+			preparedStatement.setDouble(3,precio);
+			preparedStatement.setInt(4,0);
+			preparedStatement.setString(5,"nadie");
+			preparedStatement.setString(6,codigo );
 			preparedStatement.setString(7,"0" );
 			
 			return preparedStatement .executeUpdate()>0? true:false;
