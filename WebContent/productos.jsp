@@ -41,13 +41,9 @@
 				out.println("<td>"+bien.getDescripcion()+"</td>");
 				out.println("<td>"+bien.getUnidades()+"</td>");
 				out.println("<td>"+bien.getPrecio()+"</td>");
-<<<<<<< HEAD
 				out.println("<td>"+"<a desc='"+bien.getDescripcion()+"' class='deleteItem' href='eliminarBien?id="+bien.getId()+"'>Eliminar</a>"+"</td>");
 				out.println("<td>"+"<a cod='"+bien.getId()+"' desc='"+bien.getDescripcion()+"' unidades='"+bien.getUnidades()+"' precio='"+bien.getPrecio()+"' class='editBien' href='editarBien'>Modificar</a>"+"</td>");
-=======
-				out.println("<td>"+"<a desc='"+bien.getDescripcion()+"' class='deleteItemProd' href='eliminarBien?id="+bien.getId()+"'>Eliminar</a>"+"</td>");
-				out.println("<td>"+"<a href='#'>Modificar</a>"+"</td>");
->>>>>>> d52ccf487fc13f116df7ef17121bc445c05b9c0d
+
 				out.println("</tr>");
 			}
 		%>
