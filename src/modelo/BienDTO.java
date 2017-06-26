@@ -26,7 +26,7 @@ public class BienDTO {
 		bienes =  new ArrayList<>();
 		try {
 			 statement = conexion.conectar().createStatement();
-			 resultSet = statement.executeQuery("SELECT * FROM bien WHERE eliminado = 0");
+			 resultSet = statement.executeQuery("SELECT * FROM bien where eliminado = 0");
 			 
 			 while(resultSet.next())  {
 					bien=new Bien(); 
@@ -71,6 +71,7 @@ public class BienDTO {
 			preparedStatement.setString(2,descripcion );
 			preparedStatement.setInt(3, unidades);
 			preparedStatement.setDouble(4, precio);
+		
 			preparedStatement .executeUpdate();
 			return true;
 		} catch (Exception e) {
@@ -118,6 +119,34 @@ public class BienDTO {
 			preparedStatement.setString(2,cod );
 			preparedStatement .executeUpdate();
 			return true;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return false;
+	}
+
+public boolean modificar(String codigo,String desc,String unidades,double precio){
+		
+		String insertTableSQL = "UPDATE bien "
+				+ "SET descBien= ? , unidades= ?, precio=?,estbloqueo=?,userBloqueo=? "
+				+ "WHERE idBien like ? AND eliminado = ?";
+			
+		// execute insert SQL stetement
+		System.out.println(codigo+" "+desc);
+		try {
+			System.out.print("aqui en modificar ");
+			PreparedStatement preparedStatement = conexion.conectar().prepareStatement(insertTableSQL);
+			preparedStatement.setString(1, codigo);
+			preparedStatement.setString(2,desc);
+			preparedStatement.setString(3,unidades);
+			preparedStatement.setDouble(4,precio);
+			preparedStatement.setInt(5,0);
+			preparedStatement.setString(6,"nadie" );
+			preparedStatement.setString(7,"0" );
+			
+			return preparedStatement .executeUpdate()>0? true:false;
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

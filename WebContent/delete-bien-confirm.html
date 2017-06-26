@@ -36,7 +36,7 @@
            <div class="modal-content">
                <div class="modal-body modalBodyMsg">
                <h4>modificar bien</h4>
-                   <form id="modCategoriaForm" action="#" method="post">
+                   <form id="modBienForm" action="#" method="post">
                    		<div class="input-field col s12">
 				            <input readonly="readonly"  name="codigo_edit" id="codigo_edit" type="number" data-length="2" maxlength="2">
 				            <label for="codigo_edit" class="center-align" >Codigo</label>
@@ -45,7 +45,15 @@
 				            <input name="descripcion_edit" id="descripcion_edit" type="text">
 				            <label for="descripcion_edit" class="center-align">Descripcion</label>
 				         </div>	     
-                   
+                   		 <div class="input-field col s12">
+				            <input name="unidades_edit" id="unidades_edit" type="text">
+				            <label for="unidades_edit" class="center-align">Unidades</label>
+				         </div>	
+				          <div class="input-field col s12">
+				            <input name="precio_edit" id="precio_edit" type="text">
+				            <label for="precio_edit" class="center-align">Precio</label>
+				         </div>	
+                   		 
 	                   <div class="divModalButton">
 	                       <button  type="submit" data-dismiss="modal" class="btn btn-primary" id="modBien">Modificar</button>
 	                       <button type="button" data-dismiss="modal" class="btn btn-primary modal-close ">Cancelar</button>
