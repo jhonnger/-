@@ -84,8 +84,8 @@ public class BienDTO {
 
 	public boolean insertar(String desc, String cantidad, String precio, String categoria) {
 		String insertTableSQL = "INSERT INTO bien"
-				+ "(idBien, descBien,unidades,precio,estbloqueo,userBloqueo) VALUES"
-				+ "(?,?,?,?,?,?)";
+				+ "(idBien, descBien,unidades,precio,estbloqueo,userBloqueo,eliminado) VALUES"
+				+ "(?,?,?,?,?,?,?)";
 		System.out.print("Aqui");
 		// execute insert SQL stetement
 		try {
@@ -97,6 +97,7 @@ public class BienDTO {
 			preparedStatement.setDouble(4,p);
 			preparedStatement.setInt(5,0);
 			preparedStatement.setString(6, "cumpita");
+			preparedStatement.setString(7, "0");
 			preparedStatement .executeUpdate();
 			return true;
 		} catch (Exception e) {
@@ -137,23 +138,13 @@ public boolean modificar(String codigo,String desc,String unidades,double precio
 		System.out.println(codigo+" "+desc);
 		try {
 			System.out.print("aqui en modificar ");
-			PreparedStatement preparedStatement = conexion.conectar().prepareStatement(insertTableSQL);
-<<<<<<< HEAD
-			
+			PreparedStatement preparedStatement = conexion.conectar().prepareStatement(insertTableSQL);	
 			preparedStatement.setString(1,desc);
 			preparedStatement.setString(2,unidades);
 			preparedStatement.setDouble(3,precio);
 			preparedStatement.setInt(4,0);
 			preparedStatement.setString(5,"nadie" );
 			preparedStatement.setString(6, codigo);
-=======
-			preparedStatement.setString(1, desc);
-			preparedStatement.setString(2,unidades);
-			preparedStatement.setDouble(3,precio);
-			preparedStatement.setInt(4,0);
-			preparedStatement.setString(5,"nadie");
-			preparedStatement.setString(6,codigo );
->>>>>>> 8c9c00fb228e446a851f57db161fbee31e6e29dd
 			preparedStatement.setString(7,"0" );
 			
 			return preparedStatement .executeUpdate()>0? true:false;

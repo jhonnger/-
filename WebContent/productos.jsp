@@ -36,17 +36,13 @@
         </TR>
 		<%
 			for(Bien bien :BienDTO.listar() ){
-				out.println("<tr>");
+				out.println("<tr>");	
 				out.println("<td>"+bien.getId()+"</td>");
 				out.println("<td>"+bien.getDescripcion()+"</td>");
 				out.println("<td>"+bien.getUnidades()+"</td>");
 				out.println("<td>"+bien.getPrecio()+"</td>");
 				out.println("<td>"+"<a desc='"+bien.getDescripcion()+"' class='deleteItem' href='eliminarBien?id="+bien.getId()+"'>Eliminar</a>"+"</td>");
 				out.println("<td>"+"<a cod='"+bien.getId()+"' desc='"+bien.getDescripcion()+"' unidades='"+bien.getUnidades()+"' precio='"+bien.getPrecio()+"' class='editBien' href='editarBien'>Modificar</a>"+"</td>");
-<<<<<<< HEAD
-=======
-
->>>>>>> 8c9c00fb228e446a851f57db161fbee31e6e29dd
 				out.println("</tr>");
 			}
 		%>
